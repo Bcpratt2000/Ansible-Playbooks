@@ -1,0 +1,13 @@
+---
+        - name: Playbook
+          hosts: all
+          become: yes
+          tasks: 
+                - name: apt update
+                  shell: "apt update -y"
+                - name: apt upgrade
+                  shell: "apt upgrade -y"
+                - name: apt autoremove
+                  shell: "apt autoremove -y"
+                - name: apt autoclean
+                  shell: "apt autoclean -y"
