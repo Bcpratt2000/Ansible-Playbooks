@@ -1,0 +1,7 @@
+---
+        - name: Playbook
+          hosts: all
+          become: yes
+          tasks: 
+                - name: backup sources.list to sources.list.old
+                  shell: "update-alternatives --install /usr/bin/python python /usr/bin/python3 2"

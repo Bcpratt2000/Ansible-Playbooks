@@ -2,12 +2,10 @@
         - name: Playbook
           hosts: all
           become: yes
-          tasks: 
-                - name: apt update
-                  shell: "apt update -y"
-                - name: apt upgrade
-                  shell: "apt upgrade -y"
-                - name: apt autoremove
-                  shell: "apt autoremove -y"
-                - name: apt autoclean
-                  shell: "apt autoclean -y"
+          tasks:
+                - name: Update all packages to their latest version
+                  ansible.builtin.apt:
+                          name: "*"
+                          state: latest
+                          autoclean: yes
+                          autoremove: yes
